@@ -29,4 +29,14 @@ feature "StaticPages" do
 		visit '/static_pages/home'
 		expect(page).to have_title('Sample App | Home')
 	end
+
+	scenario 'it should have the right title' do
+		visit '/static_pages/help'
+		expect(page).to have_title('Sample App | Help')
+	end
+
+	scenario 'it should have the right title' do
+		visit '/static_pages/about'
+		expect(page).to have_title('Sample App | About Us')
+	end
 end
