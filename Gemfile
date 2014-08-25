@@ -1,21 +1,31 @@
-source 'https://rubygems.org'
+source 'https://ruby.taobao.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 
 group :development, :test do
-	gem 'sqlite3'
-	gem 'rspec-rails'
+  gem 'sqlite3' 
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  #windows下的guard自动化相关
+  gem 'rb-notifu'
+  # gem 'win32console' #使用该gem在rails generate脚手架命令下会出错
+  gem 'wdm'
+
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 group :test do
-	gem 'selenium-webdriver'
-	gem 'capybara'
+  gem 'selenium-webdriver'
+  #模拟浏览器的用户行为
+  gem 'capybara'
 end
 
 group :production do
-	gem 'pg'
+  gem 'pg'
 end
 
 # Use SCSS for stylesheets
