@@ -10,39 +10,29 @@ require 'rails_helper'
 # end
 
 
-
 feature "homepage" do
-	scenario "it should have the content 'Sample App'" do
-		visit root_path
-		expect(page).to have_content('Sample App')
-	end
+	subject {page}
 
-	scenario 'it should have the right title' do
-		visit root_path
-		expect(page).to have_title('Sample App | Home')
-	end
+	before {visit root_path}
+  it { should have_content('Sample App') }
+  it { should have_title(full_title('Home')) }
+
 end
 
 feature "HelpPage" do
-	scenario "it should have the content 'Help'" do
-		visit help_path
-		expect(page).to have_content('Help')
-	end
+	subject {page}
 
-	scenario 'it should have the right title' do
-		visit help_path
-		expect(page).to have_title('Sample App | Help')
-	end
+	before {visit help_path}
+  it { should have_content('Help') }
+  it { should have_title(full_title('Help')) }
+
 end
 
 feature "AboutPage" do
-	scenario "it should have the content 'About'" do
-		visit about_path
-		expect(page).to have_content('About')
-	end
+	subject {page}
 
-	scenario 'it should have the right title' do
-		visit about_path
-		expect(page).to have_title('Sample App | About Us')
-	end
+	before {visit about_path}
+  it { should have_content('About') }
+  it { should have_title(full_title('About Us')) }
+
 end
