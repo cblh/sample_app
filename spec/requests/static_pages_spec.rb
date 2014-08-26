@@ -9,27 +9,7 @@ require 'rails_helper'
 #   end
 # end
 
-feature "StaticPages" do
-	scenario "it should have the content 'Help'" do
-		visit help_path
-		expect(page).to have_content('Help')
-	end
 
-	scenario "it should have the content 'About'" do
-		visit about_path
-		expect(page).to have_content('About')
-	end
-
-	scenario 'it should have the right title' do
-		visit help_path
-		expect(page).to have_title('Sample App | Help')
-	end
-
-	scenario 'it should have the right title' do
-		visit about_path
-		expect(page).to have_title('Sample App | About Us')
-	end
-end
 
 feature "homepage" do
 	scenario "it should have the content 'Sample App'" do
@@ -40,5 +20,29 @@ feature "homepage" do
 	scenario 'it should have the right title' do
 		visit root_path
 		expect(page).to have_title('Sample App | Home')
+	end
+end
+
+feature "HelpPage" do
+	scenario "it should have the content 'Help'" do
+		visit help_path
+		expect(page).to have_content('Help')
+	end
+
+	scenario 'it should have the right title' do
+		visit help_path
+		expect(page).to have_title('Sample App | Help')
+	end
+end
+
+feature "AboutPage" do
+	scenario "it should have the content 'About'" do
+		visit about_path
+		expect(page).to have_content('About')
+	end
+
+	scenario 'it should have the right title' do
+		visit about_path
+		expect(page).to have_title('Sample App | About Us')
 	end
 end
